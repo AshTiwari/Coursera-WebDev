@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> Combining Selectors
+</title>
+<style>
+
+/* all with class=" marked " */
+.marked {
+  background-color: green;
+}
+
+/* all p elements with class=" marked " */
+p.marked {  
+  font-style: italic;
+}
+
+/* all elements with class 'highlight' as well as with class 'mainpoint'. */
+.mainpoint.highlight {
+  color: red;
+  background-color: black;
+}
+</style>
+</head>
+<body>
+
+<h1> Combining Selectors </h1>
+
+
+<h1> 1. </h1>
+<h1 class=" marked ">Element with Class Selector. </h1>
+
+<p class="marked"> Element (p) with Class (marked) Selector. This belongs to both the styles ' .marked  ' and ' p.marked ' because this is a paragraph with class marked.  </p>
+<aside> This was element with calss</aside>
+<br>
+
+<h1> 2. </h1>
+<h1 class="marked"> Class and Class Selector. </h1> 
+<div class="mainpoint highlight">This contains both class mainpoint and highlight. Hence is is designed using  ' .mainpoint.highlight '
+</div>
+<aside> This was classs with class </aside>
+
+
+<style>
+/* any article element which is a direct child of a section element,i.e., any article element whose immediate parent is a section element. */
+section > article {
+  color: red;
+  font-size: 24px;
+}
+
+</style>
+
+<h1> 3. </h1>
+<h1 class = "marked"> Child Selector. </h1>
+
+<section>
+  <div>
+    <article>ARTICLE which inside DIV, which is inside SECTION. Hence it is not affected by style > article {}</article>
+  </div>
+</section>
+<section>
+  <article>ARTICLE as a direct child of the SECTION element. Hence it is affected by style > article {}</article>
+</section>
+
+
+<style>
+/* any article element which is a direct/indirect child of a section element */
+section  article {
+  color: red;
+  font-size: 24px;
+}
+
+</style>
+
+
+<h1> 3. </h1>
+<h1 class = "marked"> Descedant Selector. </h1>
+
+<section>
+  <div>
+    <article>ARTICLE which inside DIV, which is inside SECTION. Still it is affected by <span class= "marked">  ' style  article {} '  </span> as oppose to as in child selector</article>
+  </div>
+</section>
+<section>
+  <article>ARTICLE as a direct child of the SECTION element. It is affected by <span class= "marked">  ' style  article {} '  </span> . Same as in child selector.</article>
+</section>
+
+
+</body>
+</html>
