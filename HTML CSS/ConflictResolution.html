@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Cascade of CSS</title>
+	<link rel="stylesheet" href="ConflictResolution.css">
+
+	<style>
+		p {
+		  color: maroon;
+		}
+	</style>
+
+</head>
+
+<body>
+	<h1>Example = 1 <br> Inheritance Origin Specificity </h1>
+
+	<ol>Rules: 
+		<li> If styles are mentioned at multiple places for an element and none of it address same properties then all the properties merge without conflict.  e.g. Check Example 1</li>
+		<li>Origin:  If styles are mentioned at multiple places for an element and some of it address same properties then origin is checked and last decleration wins. e.g. Check Example 2 and 3 </li>
+	
+		<li> Inheritance: <br>
+			<a href="inheritance.html" target="_blank"   title="Inheritance">
+		</li>
+
+		<li> Specificity: Most specific selector combination wins. Priority order for specificity is 
+			<ol>
+			<li> style </li>
+			<li> ID </li>
+			<li> class, psuedo class, attribute </li>
+			<li> no. of elements </li>
+			The one with the higher value wins.
+			</ol>	
+		Check for specificity at <a href="specificity.html" target="_blank"   title="specificity">			
+		</li>
+	</ol>
+
+	<p> Example = 2 <br> There is a style for paragraph color in external CSS file. Then there is a style for paragraph color = maroon after external file is mentioned. 
+		This paragraph element dosen't mention its own style. 
+		And there is only one style for background color in external file hence it has no  conflcit in style.</p>
+	
+	<p style="color: black;"> Example 3 <br>There is a style for paragraph color in external CSS file. 
+		Then there is a style for paragraph color = maroon after external file is mentioned. 
+		This paragraph element  has its own style for color = black. 
+		And there is only one style for background color in external file hence it has no  conflcit in style.</p>
+</body>
+</html>
